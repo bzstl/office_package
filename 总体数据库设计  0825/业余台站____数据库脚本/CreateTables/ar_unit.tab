@@ -1,0 +1,43 @@
+create table AR_UNIT
+(
+  unit_id    VARCHAR2(36) not null,
+  apply_id   VARCHAR2(36) not null,
+  unit_name  VARCHAR2(100),
+  reg_unit   VARCHAR2(100),
+  address1   VARCHAR2(20),
+  address2   VARCHAR2(20),
+  address3   VARCHAR2(20),
+  address4   VARCHAR2(100),
+  unit_code  VARCHAR2(50),
+  unit_phone VARCHAR2(40),
+  unit_fax   VARCHAR2(40)
+)
+;
+comment on column AR_UNIT.unit_id
+  is '设台单位ID';
+comment on column AR_UNIT.apply_id
+  is '申请ID';
+comment on column AR_UNIT.unit_name
+  is '设台单位名称';
+comment on column AR_UNIT.reg_unit
+  is '申请单位登记机关';
+comment on column AR_UNIT.address1
+  is '申请单位地址（省份）';
+comment on column AR_UNIT.address2
+  is '申请单位地址（市、区）';
+comment on column AR_UNIT.address3
+  is '申请单位地址（县）';
+comment on column AR_UNIT.address4
+  is '申请单位地址（详细）';
+comment on column AR_UNIT.unit_code
+  is '申请单位机构代码';
+comment on column AR_UNIT.unit_phone
+  is '申请单位联系电话';
+comment on column AR_UNIT.unit_fax
+  is '申请单位传真';
+alter table AR_UNIT
+  add constraint PK_UNIT_ID primary key (UNIT_ID);
+alter table AR_UNIT
+  add constraint FK_UNIT_APPLY_ID foreign key (APPLY_ID)
+  references AR_APPLY (APPLY_ID);
+

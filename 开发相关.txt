@@ -1,0 +1,12 @@
+数据库：
+URL:jdbc:oracle:thin:@192.168.201.192:1521:xe
+用户名：sys、system
+密码: oracle
+创建表空间的根目录：/u01/app/oracle/oradata/rmip
+
+maven仓库地址：http://192.168.201.192:8091/nexus/content/groups/public    admin/admin123
+
+svn访问目录：svn://192.168.201.192/rmip/branches/dev/rx-rmip-business    baizhangshun bzs321
+
+在线的文档系统：http://192.168.201.192:8090/
+api管理系统  http://192.168.201.192:8092/

@@ -1,0 +1,46 @@
+create table AR_STATION
+(
+  apply_id           VARCHAR2(36) not null,
+  call_sign_id       VARCHAR2(10),
+  area_code          VARCHAR2(10) not null,
+  stat_class         VARCHAR2(1) not null,
+  stat_status        VARCHAR2(1) not null,
+  rep_freq_up        NUMBER(14,7),
+  rep_freq_down      NUMBER(14,7),
+  rep_pow            NUMBER(10,3),
+  rep_mod            VARCHAR2(1),
+  rep_data_mod_class VARCHAR2(1),
+  rep_remoter_class  VARCHAR2(1),
+  ar_memo            VARCHAR2(100)
+)
+;
+comment on column AR_STATION.apply_id
+  is '申请ID';
+comment on column AR_STATION.call_sign_id
+  is '呼号编号（呼号）';
+comment on column AR_STATION.area_code
+  is '管理机构代码';
+comment on column AR_STATION.stat_class
+  is '台站种类';
+comment on column AR_STATION.stat_status
+  is '台站状态';
+comment on column AR_STATION.rep_freq_up
+  is '中继台上行频率';
+comment on column AR_STATION.rep_freq_down
+  is '中继台下行频率';
+comment on column AR_STATION.rep_pow
+  is '中继台下行功率 ';
+comment on column AR_STATION.rep_mod
+  is '调制方式';
+comment on column AR_STATION.rep_data_mod_class
+  is '数字调制系统种类';
+comment on column AR_STATION.rep_remoter_class
+  is '遥控措施种类';
+comment on column AR_STATION.ar_memo
+  is '备注';
+alter table AR_STATION
+  add constraint PK_STATION_APPLY_ID primary key (APPLY_ID);
+alter table AR_STATION
+  add constraint FK_APPLY_ID foreign key (APPLY_ID)
+  references AR_APPLY (APPLY_ID);
+

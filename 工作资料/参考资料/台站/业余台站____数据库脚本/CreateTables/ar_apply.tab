@@ -1,0 +1,58 @@
+create table AR_APPLY
+(
+  apply_id        VARCHAR2(36) not null,
+  app_code        VARCHAR2(20) not null,
+  area_code       VARCHAR2(10) not null,
+  app_item        VARCHAR2(1) not null,
+  app_subject     VARCHAR2(1) not null,
+  stat_class      VARCHAR2(1) not null,
+  special_explain VARCHAR2(50),
+  stat_name       VARCHAR2(50),
+  stat_scope      VARCHAR2(1) not null,
+  stat_special    VARCHAR2(100),
+  stat_type       VARCHAR2(1),
+  callsign_old    VARCHAR2(20),
+  level_old       VARCHAR2(1),
+  otherinfo       VARCHAR2(300),
+  memo            VARCHAR2(300),
+  app_date        DATE not null,
+  lastmodify      DATE not null
+)
+;
+comment on column AR_APPLY.apply_id
+  is '申请ID';
+comment on column AR_APPLY.app_code
+  is '申请表编号';
+comment on column AR_APPLY.area_code
+  is '管理机构代码';
+comment on column AR_APPLY.app_item
+  is '申请项目';
+comment on column AR_APPLY.app_subject
+  is '申请表主体';
+comment on column AR_APPLY.stat_class
+  is '台站种类';
+comment on column AR_APPLY.special_explain
+  is '台站特殊种类描述';
+comment on column AR_APPLY.stat_name
+  is '台站名称';
+comment on column AR_APPLY.stat_scope
+  is '拟通信范围';
+comment on column AR_APPLY.stat_special
+  is '特殊台站说明';
+comment on column AR_APPLY.stat_type
+  is '拟设台站类别';
+comment on column AR_APPLY.callsign_old
+  is '原指配呼号';
+comment on column AR_APPLY.level_old
+  is '原操作技术能力';
+comment on column AR_APPLY.otherinfo
+  is '其他事项说明';
+comment on column AR_APPLY.memo
+  is '审核备注';
+comment on column AR_APPLY.app_date
+  is '申请时间';
+comment on column AR_APPLY.lastmodify
+  is '最后变更时间';
+alter table AR_APPLY
+  add constraint PK_APPLY_ID primary key (APPLY_ID);
+

@@ -1,0 +1,11 @@
+create table AR_CALL_SIGN
+(
+  call_sign_id     VARCHAR2(10),
+  area_code        VARCHAR2(10),
+  call_sign_status VARCHAR2(1),
+  set_time         DATE,
+  end_time         DATE,
+  activate_time    DATE
+)
+;
+

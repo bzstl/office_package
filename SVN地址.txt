@@ -1,0 +1,5 @@
+SVN地址：(内网)http://192.168.8.176:81/svn/rmip 账号：各自的姓名全拼  密: bzs16358
+
+
+外网    http://124.172.169.77:81/svn/rmip/branches/dev
+	http://220.231.206.253:81/svn/rmip/branches/dev

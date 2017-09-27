@@ -1,0 +1,31 @@
+create table AR_EQU
+(
+  equ_id     VARCHAR2(36) not null,
+  sys_id     VARCHAR2(36) not null,
+  equ_model  VARCHAR2(40) not null,
+  equ_mfrs   VARCHAR2(100),
+  equ_code   VARCHAR2(40) not null,
+  equ_sn     VARCHAR2(40) not null,
+  equ_status VARCHAR2(1) not null
+)
+;
+comment on column AR_EQU.equ_id
+  is '设备ID';
+comment on column AR_EQU.sys_id
+  is '台站ID';
+comment on column AR_EQU.equ_model
+  is '设备型号';
+comment on column AR_EQU.equ_mfrs
+  is '设备生产厂家';
+comment on column AR_EQU.equ_code
+  is '型号核准代码';
+comment on column AR_EQU.equ_sn
+  is '出厂编号';
+comment on column AR_EQU.equ_status
+  is '设备状态';
+alter table AR_EQU
+  add constraint PK_EQU_ID primary key (EQU_ID);
+alter table AR_EQU
+  add constraint FK_EQU_SYS_ID foreign key (SYS_ID)
+  references AR_STATION_EXT (SYS_ID);
+

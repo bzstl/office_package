@@ -1,0 +1,25 @@
+create table AR_ATTACHMENT
+(
+  file_id   VARCHAR2(36) not null,
+  apply_id  VARCHAR2(36) not null,
+  file_type VARCHAR2(1) not null,
+  content   BLOB,
+  filename  VARCHAR2(200)
+)
+;
+comment on column AR_ATTACHMENT.file_id
+  is '主键';
+comment on column AR_ATTACHMENT.apply_id
+  is '申请表ID';
+comment on column AR_ATTACHMENT.file_type
+  is '附件类型';
+comment on column AR_ATTACHMENT.content
+  is '附件内容';
+comment on column AR_ATTACHMENT.filename
+  is '附件名称';
+alter table AR_ATTACHMENT
+  add constraint PK_FILE_ID primary key (FILE_ID);
+alter table AR_ATTACHMENT
+  add constraint FK_ATTACH_APPLY_ID foreign key (APPLY_ID)
+  references AR_APPLY (APPLY_ID);
+

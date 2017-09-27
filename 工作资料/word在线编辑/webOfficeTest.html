@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<script language="javascript" type="text/javascript">  
+        //WebOffice1_NotifyCtrlReady();    
+        function openDoc() {  
+            //加载控件  
+            document.all.WebOffice.LoadOriginalFile("D:\\abc.doc", "doc");  
+            //隐藏不需要的按钮  
+			//document.all.WebOffice.HideMenuItem(0x01 + 0x02 + 0x04 + 0x10 + 0x20);
+			document.all.WebOffice.HideMenuItem(0x04+0x01+0x02+0x10+0x20);
+        }  
+        function WebOpen()  
+        {  
+            obj = document.all.item("WebOffice");  
+            if (obj !='')  
+            {  
+                //等待控件初始化完毕，时间长短可以根据网络速度设定。  
+                setTimeout('openDoc()',100);  
+            }  
+        }
+		function newSave() {
+			try{
+				var webObj=document.getElementById("WebOffice");
+				webObj.Save();
+			}catch(e){
+				alert("异常\r\nError:"+e+"\r\nError Code:"+e.number+"\r\nError Des:"+e.description);
+			}
+		}
+     </script>	 
+</head>
+<body onload="javascript:WebOpen();">
+<a onclick="newSave()"><span style="cursor:pointer">save</span></a>
+<form id="form1" runat="server">  
+    <div>  
+		<object id="WebOffice" height="768" width='100%' style='left: 0px; top: 0px' classid='clsid:E77E049B-23FC-4DB8-B756-60529A35FAD5' 
+            codebase='WebOffice.cab#Version=7,0,1,8'>  
+            <param name='_ExtentX' value='6350'>  
+            <param name='_ExtentY' value='6350'>  
+              
+        </object>  
+    </div>  
+    </form>   
+</body>
+</html>

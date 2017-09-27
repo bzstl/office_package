@@ -1,0 +1,23 @@
+﻿--表空间
+CREATE TABLESPACE RMIP_STATSDB
+LOGGING
+DATAFILE '/u01/app/oracle/oradata/rmip/RMIP_STATSDB.DBF'
+SIZE 32M
+AUTOEXTEND ON
+NEXT 32M MAXSIZE 2096M
+EXTENT MANAGEMENT LOCAL;
+
+--临时表空间
+CREATE TEMPORARY TABLESPACE RMIP_STATSDB_TEMP
+TEMPFILE '/u01/app/oracle/oradata/rmip/RMIP_STATSDB_TEMP.DBF'
+SIZE 32M
+AUTOEXTEND ON
+NEXT 32m MAXSIZE 2096M
+EXTENT MANAGEMENT LOCAL;
+
+--建用户分配表空间
+create user stats identified by 00000000 default TABLESPACE RMIP_STATSDB temporary TABLESPACE RMIP_STATSDB_TEMP;
+
+--分配权限
+grant connect,resource,dba to stats;
+grant unlimited tablespace to stats;

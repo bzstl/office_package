@@ -1,0 +1,12 @@
+imp 310000_STATDB/00000000@RMIP file=./allinone.dmp fromuser=500000_STATDB touser=500000_STATDB  statistics=none
+imp HISTORY_310000_STATDB/00000000@RMIP file=./allinone.dmp fromuser=HISTORY_500000_STATDB touser=HISTORY_310000_STATDB  statistics=none
+imp 310000_ARSTATDB/00000000@RMIP file=./allinone.dmp fromuser=500000_ARSTATDB touser=310000_ARSTATDB  statistics=none
+imp 310000_FREQDB/00000000@RMIP file=./allinone.dmp fromuser=RXDEV touser=310000_FREQDB  statistics=none
+imp 500000_FREQDB/00000000@RMIP file=./allinone.dmp fromuser=500000_FREQDB touser=500000_FREQDB  statistics=none
+imp RXDEV/00000000@RMIP file=./allinone.dmp fromuser=RXDEV2 touser=RXDEV  statistics=none  log=./rxdev.log
+imp SITE/00000000@RMIP file=./allinone.dmp fromuser=SITE touser=SITE  statistics=none  log=./site.log
+imp AWS/00000000@RMIP file=./rmip_aws.dmp fromuser=AWS touser=AWS  statistics=none
+imp PORTAL/00000000@RMIP file=./allinone.dmp fromuser=PORTAL touser=PORTAL  statistics=none  log=./PORTAL.log
+
+imp BPMS/00000000@RMIP file=./bpmsAndAws.dmp fromuser=BPMS touser=BPMS  statistics=none  log=./BPMS.log
+imp AWS/00000000@RMIP file=./bpmsAndAws.dmp fromuser=AWS touser=AWS  statistics=none  log=./AWS.log

@@ -1,0 +1,22 @@
+create table AR_EQU_POW
+(
+  infoid    VARCHAR2(36) not null,
+  equ_id    VARCHAR2(36) not null,
+  pow_type  VARCHAR2(1) not null,
+  pow_value NUMBER(13,3) not null
+)
+;
+comment on column AR_EQU_POW.infoid
+  is '信息ID';
+comment on column AR_EQU_POW.equ_id
+  is '设备ID';
+comment on column AR_EQU_POW.pow_type
+  is '功率类型';
+comment on column AR_EQU_POW.pow_value
+  is '功率值';
+alter table AR_EQU_POW
+  add constraint PK_INFOID primary key (INFOID);
+alter table AR_EQU_POW
+  add constraint FK_EQU_POW_ID foreign key (EQU_ID)
+  references AR_EQU (EQU_ID);
+

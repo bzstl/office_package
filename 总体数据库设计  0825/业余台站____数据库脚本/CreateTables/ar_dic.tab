@@ -1,0 +1,25 @@
+create table AR_DIC
+(
+  co                 NUMBER not null,
+  cn                 VARCHAR2(10) not null,
+  code_chi_name      VARCHAR2(80) not null,
+  code_data_type     VARCHAR2(8) not null,
+  code_type_chi_name VARCHAR2(80),
+  code_discn         NUMBER
+)
+;
+comment on column AR_DIC.co
+  is '序号';
+comment on column AR_DIC.cn
+  is '代码编号';
+comment on column AR_DIC.code_chi_name
+  is '代码中文名称';
+comment on column AR_DIC.code_data_type
+  is '代码数据表类型';
+comment on column AR_DIC.code_type_chi_name
+  is '代码数据表类型中文名称';
+comment on column AR_DIC.code_discn
+  is '显示序号';
+alter table AR_DIC
+  add constraint PK_CO primary key (CO);
+

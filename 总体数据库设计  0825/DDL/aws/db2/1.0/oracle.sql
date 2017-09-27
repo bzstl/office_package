@@ -1,0 +1,1 @@
+CREATE TABLE APP_ACT_ORGIMP_LOG (ID varchar(36) NOT NULL, OPTYPE number(10,0), ORGTYPE number(10,0), LOGFILE varchar(255),  XLSFILE varchar(255), STARTTIME timestamp NOT NULL, ENDTIME timestamp , status number(10,0),REMARK varchar(50),OPTUSER varchar(100),IP varchar(50),LOGDOWNLOAD varchar(1000), PRIMARY KEY (ID));

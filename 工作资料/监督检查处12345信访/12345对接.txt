@@ -1,0 +1,11 @@
+12345后台地址   http://10.107.16.225/index.jsp    swxd_xum / abc123456
+
+接口
+ip是10.107.16.232
+
+端口是8087
+
+http://10.107.16.232:8087/12345gongdanInterface/services/IserviceInterfaceService?wsdl
+
+
+账号是 293  密码是111111

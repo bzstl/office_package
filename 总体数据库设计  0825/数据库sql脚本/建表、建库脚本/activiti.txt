@@ -1,0 +1,18 @@
+CREATE TABLESPACE ACTIVITI_TEST
+LOGGING
+DATAFILE 'D:/oracdata/ACTIVITI_TEST.DBF'
+SIZE 32M
+AUTOEXTEND ON
+NEXT 32M MAXSIZE 2096M
+EXTENT MANAGEMENT LOCAL;
+
+create user activitiuser identified by activitiuser123;
+
+alter user activitiuser  quota unlimited on ACTIVITI_TEST;
+
+
+
+grant connect,resource,dba to activitiuser;
+
+
+

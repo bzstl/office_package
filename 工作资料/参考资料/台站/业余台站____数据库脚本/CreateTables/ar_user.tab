@@ -1,0 +1,94 @@
+create table AR_USER
+(
+  user_id         VARCHAR2(36) not null,
+  apply_id        VARCHAR2(36) not null,
+  user_type       VARCHAR2(1) not null,
+  user_name       VARCHAR2(50) not null,
+  gender          VARCHAR2(1),
+  idcard          VARCHAR2(20) not null,
+  nation          VARCHAR2(40),
+  education       VARCHAR2(20),
+  operation_level VARCHAR2(1),
+  level_code      VARCHAR2(40),
+  service_unit    VARCHAR2(100),
+  service_post    VARCHAR2(6),
+  address1        VARCHAR2(20),
+  address2        VARCHAR2(20),
+  address3        VARCHAR2(20),
+  address4        VARCHAR2(100),
+  address_post    VARCHAR2(6),
+  contact_addr1   VARCHAR2(20),
+  contact_addr2   VARCHAR2(20),
+  contact_addr3   VARCHAR2(20),
+  contact_addr4   VARCHAR2(100),
+  contact_post    VARCHAR2(6),
+  email           VARCHAR2(100),
+  fax             VARCHAR2(40),
+  service_phone   VARCHAR2(40),
+  home_phone      VARCHAR2(40),
+  mobile          VARCHAR2(40),
+  connect_phone   VARCHAR2(20)
+)
+;
+comment on column AR_USER.user_id
+  is '人员ID';
+comment on column AR_USER.apply_id
+  is '申请ID';
+comment on column AR_USER.user_type
+  is '人员类别';
+comment on column AR_USER.user_name
+  is '申请人/技术负责人/单位负责人姓名';
+comment on column AR_USER.gender
+  is '申请人/技术负责人/单位负责人性别';
+comment on column AR_USER.idcard
+  is '申请人/技术负责人/单位负责人身份证';
+comment on column AR_USER.nation
+  is '申请人/技术负责人民族';
+comment on column AR_USER.education
+  is '申请人/技术负责人文化程度';
+comment on column AR_USER.operation_level
+  is '申请人/技术负责人操作级别';
+comment on column AR_USER.level_code
+  is '申请人/技术负责人级别证编号';
+comment on column AR_USER.service_unit
+  is '申请人/技术负责人服务单位';
+comment on column AR_USER.service_post
+  is '申请人/技术负责人服务单位邮编';
+comment on column AR_USER.address1
+  is '申请人/技术负责人常住地址（省份）';
+comment on column AR_USER.address2
+  is '申请人/技术负责人常住地址（市、区）';
+comment on column AR_USER.address3
+  is '申请人/技术负责人常住地址（县）';
+comment on column AR_USER.address4
+  is '申请人/技术负责人常住地址（详细）';
+comment on column AR_USER.address_post
+  is '申请人/技术负责人常住地址邮编';
+comment on column AR_USER.contact_addr1
+  is '申请人/技术负责人/单位负责人联系地址（省份）';
+comment on column AR_USER.contact_addr2
+  is '申请人/技术负责人/单位负责人联系地址（市、区）';
+comment on column AR_USER.contact_addr3
+  is '申请人/技术负责人/单位负责人联系地址（县）';
+comment on column AR_USER.contact_addr4
+  is '申请人/技术负责人/单位负责人联系地址（详细）';
+comment on column AR_USER.contact_post
+  is '申请人/技术负责人/单位负责人联系地址邮编';
+comment on column AR_USER.email
+  is '申请人/技术负责人/单位负责人电子邮件';
+comment on column AR_USER.fax
+  is '申请人/技术负责人/单位负责人传真';
+comment on column AR_USER.service_phone
+  is '申请人/技术负责人/单位负责人单位电话';
+comment on column AR_USER.home_phone
+  is '申请人/技术负责人/单位负责人住宅电话';
+comment on column AR_USER.mobile
+  is '申请人/技术负责人/单位负责人移动电话';
+comment on column AR_USER.connect_phone
+  is '单位负责人联系电话';
+alter table AR_USER
+  add constraint PK_USER_ID primary key (USER_ID);
+alter table AR_USER
+  add constraint FK_USER_APPLY_ID foreign key (APPLY_ID)
+  references AR_APPLY (APPLY_ID);
+

@@ -1,0 +1,43 @@
+create table AR_STATION_EXT
+(
+  sys_id       VARCHAR2(36) not null,
+  apply_id     VARCHAR2(36) not null,
+  stat_setkind VARCHAR2(2),
+  sys_name     VARCHAR2(20),
+  stat_addr1   VARCHAR2(20),
+  stat_addr2   VARCHAR2(20),
+  stat_addr3   VARCHAR2(20),
+  stat_addr4   VARCHAR2(50),
+  stat_height  NUMBER(10,3),
+  stat_lg      NUMBER(10,7),
+  stat_la      NUMBER(10,7),
+  plate_number VARCHAR2(20)
+)
+;
+comment on column AR_STATION_EXT.sys_id
+  is '分类ID';
+comment on column AR_STATION_EXT.apply_id
+  is '申请表ID';
+comment on column AR_STATION_EXT.stat_setkind
+  is '电台设置方式';
+comment on column AR_STATION_EXT.sys_name
+  is '分类名称';
+comment on column AR_STATION_EXT.stat_addr1
+  is '固定台地址（省份）';
+comment on column AR_STATION_EXT.stat_addr2
+  is '固定台地址（市、区）';
+comment on column AR_STATION_EXT.stat_addr3
+  is '固定台地址（县）';
+comment on column AR_STATION_EXT.stat_addr4
+  is '固定台地址（详细）';
+comment on column AR_STATION_EXT.stat_height
+  is '固定台天线馈电点海拔高度';
+comment on column AR_STATION_EXT.stat_lg
+  is '地理坐标经度';
+comment on column AR_STATION_EXT.stat_la
+  is '地理坐标纬度';
+comment on column AR_STATION_EXT.plate_number
+  is '设台车牌号';
+alter table AR_STATION_EXT
+  add constraint PK_SYS_ID primary key (SYS_ID);
+

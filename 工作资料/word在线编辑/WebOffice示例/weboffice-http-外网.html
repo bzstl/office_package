@@ -1,0 +1,18 @@
+<script>
+function saveto(){
+	var Object=document.all.WebOffice1;
+	Object.HttpInit(); //初始化HTTP引擎。
+	Object.HttpAddPostString("NAME",document.all.Fname.value); //设置上传文件名。
+	Object.HttpAddPostString("FTYPE","doc"); //设置上传文件类型。
+	Object.HttpAddPostCurrFile("FileBlod","");//设置上传当前文件,文件标识为FileBlod。
+	var id=Object.HttpPost("http://www.dianju.cn:8089/test.php");//上传数据。http://127.0.0.1/test.aspx为接收文档的后台页面
+	alert(id);
+}
+</script>
+<SCRIPT language=javascript event=NotifyCtrlReady for=WebOffice1>
+
+</SCRIPT>
+文档名：<input type="text" value="test" id="Fname">
+<input value="保存" type="button"onclick="saveto()">
+<object id=WebOffice1 height=768 width='100%' style='LEFT: 0px; TOP: 0px'  classid='clsid:E77E049B-23FC-4DB8-B756-60529A35FAD5'>
+</object>

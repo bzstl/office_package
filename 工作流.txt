@@ -1,0 +1,114 @@
+http://192.168.201.163:8088/portal/console/
+
+
+https://docs.awspaas.com/help/getting_started/README.html
+
+
+admin/123456   后端
+
+
+
+api
+
+新建流程： process.create    process.start   bo.create
+查找代办： task.query
+提交审批菜单和审批留言：task.comment.commit
+完整任务（自动开始下一个任务）：task.complete
+
+
+
+第一步：新建一个流程
+1 创建流程实例 （process.create）
+
+例子：
+		args.put("processDefId", "obj_765892c2b21148ce8f3f08c2c8c37ca9");
+		args.put("uid", "admin");
+		args.put("title", "项目立项测试14");
+
+		ProcessInstResponse processInstance = client.exec(apiMethod, args, ProcessInstResponse.class);//创建的流程实例
+		
+		String pID=processInstance.getData().getId();//获取刚刚创建的流程实例ID
+
+2 启动该流程实例（"process.start）
+
+例子：		
+		args.put("processInstId", pID);
+		ApiResponse start = client.exec(apiMethod, args, ApiResponse.class);//启动流程
+
+
+
+第二步 查找待办的任务(task.query)
+
+例子					
+					//设置查询任务的查询条件
+					taskQueryModel.setActiveTask(true);//查找的任务是活动状态
+					taskQueryModel.setProcessInstId(processInstance.getData().getId());//查找的任务属于某个流程实例
+
+					args = new HashMap<String, Object>();
+					args.put("tqm",taskQueryModel);
+					TaskInstsGetResponse r = client.exec(apiMethod, args, TaskInstsGetResponse.class);
+					
+					TaskInstance taskInstance1 = r.getData().get(0);//获取该任务实例
+					String tiID1 =taskInstance1.getId();////获取该任务实例的ID
+
+第三步 完成一个待办任务
+		
+1 为BO表新增记录（bo.create）
+
+例子：
+			args.put("boName", "BO_ACT_SUPPORT2");
+			Map record = new HashMap<String,Object>();//record代表的是bo表中的一条数据，该例子中的bo表有“QCONTENT”和“QNO”两个字段
+			record.put("QCONTENT", "内容2"); 
+			record.put("QNO", "编号2");
+			args.put("recordData", record);
+			args.put("bindId",pID );//流程实例ID
+			StringResponse bo = client.exec(apiMethod, args, StringResponse.class);
+
+2 提交审批留言和审批菜单（task.comment.commit）
+
+例子：
+						args.put("taskInstId",tiID1 );//任务实例的ID
+						args.put("user", "admin");//用户账户
+						args.put("actionName","同意" );//审批菜单
+						args.put("commentMsg","同意该申请" );//审批留言
+						args.put("isIgnoreDefaultSetting",false);
+						BoolResponse boolResponse1 = client.exec(apiMethod, args, BoolResponse.class);
+
+3  完成任务并发起下一个任务（task.complete）
+
+例子：
+		args.put("taskInstId",tiID1 );//任务实例的ID
+		args.put("uid", "admin");
+		apiResponse = client.exec(apiMethod, args, ApiResponse.class);
+
+
+
+
+
+
+
+
+
+第二步 查找待办的任务(task.query)
+
+例子					
+					//设置查询任务的查询条件
+					apiMethod = "task.query";
+					taskQueryModel.setActiveTask(true);//查找的任务是活动状态
+					taskQueryModel.setOwner("zhangj")//设置账户
+					args = new HashMap<String, Object>();
+					args.put("tqm",taskQueryModel);
+					TaskInstsGetResponse r = client.exec(apiMethod, args, TaskInstsGetResponse.class);
+					
+					foreach(String  taskInstance : r){
+						String title=taskInstance.getTitle();
+						Timestamp date=taskInstance.getBeginTime();
+					}		
+					
+
+
+
+
+
+
+
