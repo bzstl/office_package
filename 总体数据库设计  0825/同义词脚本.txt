@@ -658,6 +658,8 @@ create public synonym V_RSBT_LICENSE_LIST for "RXDEV".V_RSBT_LICENSE_LIST;
 create public synonym SPLSTATION_CONDITION for "RXDEV".SPLSTATION_CONDITION;  
 create public synonym V_RIM_RSM_PAY_RESULT for "RXDEV".V_RIM_RSM_PAY_RESULT;
 create public synonym COMPLAINT for "RXDEV".COMPLAINT;
+create public synonym SPLSTATION_MANGER for "RXDEV".SPLSTATION_MANGER;
+
 
 
 
