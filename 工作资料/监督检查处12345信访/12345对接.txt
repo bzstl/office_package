@@ -9,3 +9,16 @@ http://10.107.16.232:8087/12345gongdanInterface/services/IserviceInterfaceServic
 
 
 账号是 293  密码是111111
+
+
+工单打印
+http://10.107.16.225:8081/12345cc/wp/print/Transfer_Insert.do?action=printWpQueryDetail&WPID=20170701014881
+
+
+
+
+
+
+
+http://10.107.16.225:8081
+http://10.107.16.232:8087
