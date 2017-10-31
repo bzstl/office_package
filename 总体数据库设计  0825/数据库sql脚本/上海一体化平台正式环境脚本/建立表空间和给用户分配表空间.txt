@@ -272,6 +272,22 @@ default tablespace WIRELESS;
 grant connect,resource,dba to WIRELESS;
 
 
+--------------------------------------------------------------------------------------
 
+
+CREATE TABLESPACE "SHWDSH" DATAFILE 
+  '+datadg' SIZE 51200K AUTOEXTEND ON NEXT 640K MAXSIZE UNLIMITED,
+  '+datadg' SIZE 51200K AUTOEXTEND ON NEXT 640K MAXSIZE UNLIMITED,
+  '+datadg' SIZE 51200K AUTOEXTEND ON NEXT 640K MAXSIZE UNLIMITED
+LOGGING
+ONLINE
+PERMANENT
+EXTENT MANAGEMENT LOCAL AUTOALLOCATE;
+
+
+create user SHWDSH identified by 00000000
+default tablespace SHWDSH;
+
+grant connect,resource,dba to SHWDSH;
 
 

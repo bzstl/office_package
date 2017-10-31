@@ -1,4 +1,6 @@
 ﻿
+select 'drop public synonym '||table_name||';' from user_tables   语句生成方式
+
 
 #标准台站库
 drop public synonym RSBT_ANTFEED;
@@ -685,6 +687,86 @@ create public synonym WF_INVESTIGATE for BPMS.WF_INVESTIGATE;
 create public synonym WF_SUPV for BPMS.WF_SUPV;
 create public synonym WF_UNION for BPMS.WF_UNION;
 create public synonym BPMS_SEQUENCE for BPMS.BPMS_SEQUENCE;
+
+
+
+//SHWDSH 审改办复制数据库
+
+create public synonym JC_ABORT_REVIEW for SHWDSH.JC_ABORT_REVIEW;
+create public synonym JC_ABORT_REVIEW_DOC for SHWDSH.JC_ABORT_REVIEW_DOC;
+create public synonym JC_ACCEPT for SHWDSH.JC_ACCEPT;
+create public synonym JC_ACCEPT_INFO_DOC for SHWDSH.JC_ACCEPT_INFO_DOC;
+create public synonym JC_ACCEPT_RECEIPT_DOC for SHWDSH.JC_ACCEPT_RECEIPT_DOC;
+create public synonym JC_APPLICATION for SHWDSH.JC_APPLICATION;
+create public synonym JC_APPLICATION_APP_DOC for SHWDSH.JC_APPLICATION_APP_DOC;
+create public synonym JC_APPLICATION_CLCT_DOC for SHWDSH.JC_APPLICATION_CLCT_DOC;
+create public synonym JC_APPLICATION_DOC for SHWDSH.JC_APPLICATION_DOC;
+create public synonym JC_APPLY for SHWDSH.JC_APPLY;
+create public synonym JC_AUDIT for SHWDSH.JC_AUDIT;
+create public synonym JC_AUDIT_DOC for SHWDSH.JC_AUDIT_DOC;
+create public synonym JC_AUTHORIZE for SHWDSH.JC_AUTHORIZE;
+create public synonym JC_AUTHORIZE_DOC for SHWDSH.JC_AUTHORIZE_DOC;
+create public synonym JC_DELIVER for SHWDSH.JC_DELIVER;
+create public synonym JC_DELIVER_BACK_DOC for SHWDSH.JC_DELIVER_BACK_DOC;
+create public synonym JC_DELIVER_DOC for SHWDSH.JC_DELIVER_DOC;
+create public synonym JC_DELIVER_REVIEW_DOC for SHWDSH.JC_DELIVER_REVIEW_DOC;
+create public synonym JC_EXDATA_CONFIRM for SHWDSH.JC_EXDATA_CONFIRM;
+create public synonym JC_EXPERT_CHECK_DOC for SHWDSH.JC_EXPERT_CHECK_DOC;
+create public synonym JC_EXPERT_REVIEW for SHWDSH.JC_EXPERT_REVIEW;
+create public synonym JC_EXPERT_REVIEW_DOC for SHWDSH.JC_EXPERT_REVIEW_DOC;
+create public synonym JC_EXPERT_REVIEW_EXPIRED_DOC for SHWDSH.JC_EXPERT_REVIEW_EXPIRED_DOC;
+create public synonym JC_FILE for SHWDSH.JC_FILE;
+create public synonym JC_REDELIVERY_ACCEPT for SHWDSH.JC_REDELIVERY_ACCEPT;
+create public synonym JC_REDELIVERY_ACCEPT_DOC for SHWDSH.JC_REDELIVERY_ACCEPT_DOC;
+create public synonym JC_REDELIVERY_INFORM_DOC for SHWDSH.JC_REDELIVERY_INFORM_DOC;
+create public synonym JC_REDELIVERY_RECEIPT_DOC for SHWDSH.JC_REDELIVERY_RECEIPT_DOC;
+create public synonym JC_REDELIVERY_TELL for SHWDSH.JC_REDELIVERY_TELL;
+create public synonym JC_REDELIVERY_TELL_DOC for SHWDSH.JC_REDELIVERY_TELL_DOC;
+create public synonym JC_SERVER_CONFIRM for SHWDSH.JC_SERVER_CONFIRM;
+create public synonym JC_UNDERTAKE for SHWDSH.JC_UNDERTAKE;
+create public synonym JC_UNDERTAKE_DOC for SHWDSH.JC_UNDERTAKE_DOC;
+
+
+drop public synonym JC_ABORT_REVIEW;
+drop public synonym JC_ABORT_REVIEW_DOC;
+drop public synonym JC_ACCEPT;
+drop public synonym JC_ACCEPT_INFO_DOC;
+drop public synonym JC_ACCEPT_RECEIPT_DOC;
+drop public synonym JC_APPLICATION;
+drop public synonym JC_APPLICATION_APP_DOC;
+drop public synonym JC_APPLICATION_CLCT_DOC;
+drop public synonym JC_APPLICATION_DOC;
+drop public synonym JC_APPLY;
+drop public synonym JC_AUDIT;
+drop public synonym JC_AUDIT_DOC;
+drop public synonym JC_AUTHORIZE;
+drop public synonym JC_AUTHORIZE_DOC;
+drop public synonym JC_DELIVER;
+drop public synonym JC_DELIVER_BACK_DOC;
+drop public synonym JC_DELIVER_DOC;
+drop public synonym JC_DELIVER_REVIEW_DOC;
+drop public synonym JC_EXDATA_CONFIRM;
+drop public synonym JC_EXPERT_CHECK_DOC;
+drop public synonym JC_EXPERT_REVIEW;
+drop public synonym JC_EXPERT_REVIEW_DOC;
+drop public synonym JC_EXPERT_REVIEW_EXPIRED_DOC;
+drop public synonym JC_FILE;
+drop public synonym JC_REDELIVERY_ACCEPT;
+drop public synonym JC_REDELIVERY_ACCEPT_DOC;
+drop public synonym JC_REDELIVERY_INFORM_DOC;
+drop public synonym JC_REDELIVERY_RECEIPT_DOC;
+drop public synonym JC_REDELIVERY_TELL;
+drop public synonym JC_REDELIVERY_TELL_DOC;
+drop public synonym JC_SERVER_CONFIRM;
+drop public synonym JC_UNDERTAKE;
+drop public synonym JC_UNDERTAKE_DOC;
+
+
+
+
+
+
+
 
 
 
